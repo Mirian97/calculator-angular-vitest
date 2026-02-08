@@ -6,7 +6,6 @@ export const routes: Routes = [
     loadComponent: () =>
       import('@/calculator/views/calculator-view/calculator-view.component'),
   },
-
   {
     path: '**',
     redirectTo: 'calculator',

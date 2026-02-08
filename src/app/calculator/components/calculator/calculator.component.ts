@@ -1,3 +1,4 @@
+import { CalculatorService } from '@/calculator/services/calculator.service';
 import {
   // ChangeDetectionStrategy,
   Component,
@@ -6,7 +7,6 @@ import {
   viewChildren,
 } from '@angular/core';
 import { CalculatorButtonComponent } from '../calculator-button/calculator-button.component';
-import { CalculatorService } from '@/calculator/services/calculator.service';
 
 @Component({
   selector: 'calculator',
@@ -32,7 +32,7 @@ export class CalculatorComponent {
   // }
 
   handleClick(key: string) {
-    this.calculatorService.constructNumber(key);
+    this.calculatorService?.constructNumber(key);
   }
 
   // @HostListener('document:keyup', ['$event'])
