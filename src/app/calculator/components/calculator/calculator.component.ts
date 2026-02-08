@@ -1,18 +1,11 @@
 import { CalculatorService } from '@/calculator/services/calculator.service';
-import {
-  // ChangeDetectionStrategy,
-  Component,
-  computed,
-  inject,
-  viewChildren,
-} from '@angular/core';
+import { Component, computed, inject, viewChildren } from '@angular/core';
 import { CalculatorButtonComponent } from '../calculator-button/calculator-button.component';
 
 @Component({
   selector: 'calculator',
   imports: [CalculatorButtonComponent],
   templateUrl: './calculator.component.html',
-  // changeDetection: ChangeDetectionStrategy.OnPush,
 
   host: {
     '(document:keyup)': 'handleKeyboardEvent($event)',
@@ -26,10 +19,6 @@ export class CalculatorComponent {
   public resultText = computed(() => this.calculatorService.resultText());
   public subResultText = computed(() => this.calculatorService.subResultText());
   public lastOperator = computed(() => this.calculatorService.lastOperator());
-
-  // get resultText() {
-  //   return this.calculatorService.resultText();
-  // }
 
   handleClick(key: string) {
     this.calculatorService?.constructNumber(key);
