@@ -46,15 +46,11 @@ describe('CalculatorButtonComponent', () => {
     const buttonElement = (fixture.nativeElement as HTMLElement).querySelector(
       'button',
     );
-
-    console.log(buttonElement);
-
     buttonElement!.innerHTML = ' 9 ';
     buttonElement!.click();
 
     expect(buttonElement).toBeTruthy();
-
-    // expect(spyClick).toHaveBeenCalled();
+    expect(spyClick).toHaveBeenCalled();
     expect(spyClick).toHaveBeenCalledWith('9');
   });
 

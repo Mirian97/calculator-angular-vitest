@@ -45,15 +45,11 @@ export class CalculatorButtonComponent {
   //   return this.isDoubleSize();
   // }
 
-  handleClick() {
+  handleClick(event: Event) {
     console.log('handleClick');
-    if (!this.contentValue()?.nativeElement) {
-      return;
-    }
-
-    const value = this.contentValue()!.nativeElement.innerText;
-
-    this.onClick.emit(value.trim());
+    const button = event.target as HTMLButtonElement;
+    const value = button.textContent.trim();
+    this.onClick?.emit(value);
   }
 
   public keyboardPressedStyle(key: string) {
