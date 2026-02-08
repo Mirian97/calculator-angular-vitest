@@ -43,7 +43,7 @@ describe('CalculatorViewComponent', () => {
         ' ',
       );
     divElement?.classList.forEach((className) => {
-      expect(className).toContain(expectedClasses);
+      expect(divElement.classList).toContain(className);
     });
   });
 });

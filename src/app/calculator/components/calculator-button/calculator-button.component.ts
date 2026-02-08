@@ -1,21 +1,16 @@
 import {
-  ChangeDetectionStrategy,
   Component,
   ElementRef,
-  HostBinding,
   input,
-  OnInit,
   output,
   signal,
   viewChild,
-  ViewEncapsulation,
 } from '@angular/core';
 
 @Component({
   selector: 'calculator-button',
   imports: [],
   templateUrl: './calculator-button.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './calculator-button.component.css',
   host: {
     class: 'border-r border-b border-indigo-400',
